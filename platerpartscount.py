@@ -58,7 +58,7 @@ for output, files in [
             files = [ (escape(fullpath), count) for fullpath, count in files]
 
         print("Making " + output)
-        output_file = open(output, "r+")
+        output_file = open(output, "w+")
         output_file.truncate()
         for info in files:
             output_file.write("%s %s\n" % info)
