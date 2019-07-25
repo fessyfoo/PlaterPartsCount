@@ -25,8 +25,11 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-
-r = re.compile(r'_x(\d+).stl$',re.IGNORECASE)
+# _{name}_x{quantity}_{revision}.stl
+# _{name}_x{quantity}.stl
+# _{name}_{revision}.stl
+# _{name}.stl
+r = re.compile(r'_x(\d+)(_[^_]+)?.stl$',re.IGNORECASE)
 def count_from_filename(filename):
     m = r.search(filename)
     return m and int(m.group(1)) or 1
