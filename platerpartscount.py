@@ -41,7 +41,7 @@ def escape(filename):
 
 def process_dir():
     stl      = re.compile(r'.stl$',re.IGNORECASE)
-    accented = re.compile(r'^(_|accent_)')
+    accented = re.compile(r'^(_|a_|\[a])')
 
     accents = []
     normals = []
